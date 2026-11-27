@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-11-26T17:04:32.888103+08:00",
+  "ended_at": "2026-11-26T17:04:33.669103+08:00",
+  "timezone": "Asia/Shanghai",
+  "duration_seconds": 0.781,
+  "command": "python -m unittest discover -s tests -p test_database.py -v",
+  "working_directory": "C:\\Users\\86187\\Documents\\Codex\\2026-11-26\\unlimited-attempts-allowed-available-sep-11\\outputs\\library-database-a",
+  "exit_code": 0,
+  "tests_run": 18,
+  "all_passed": true,
+  "server": "127.0.0.1:33316",
+  "database": "library_verify",
+  "authentication": "isolated local instance; credentials omitted",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "stdout_file": "database-tests.txt",
+  "mysql": {
+    "version": "8.0.12",
+    "edition": "MySQL Community Server - GPL",
+    "sql_mode": "STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
+  },
+  "tests_passed": 18,
+  "tests_failed": 0,
+  "tests_errors": 0,
+  "tests_skipped": 0
+}

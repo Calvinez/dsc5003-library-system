@@ -1,0 +1,21 @@
+book_id	isbn	title	category	publisher
+1	9780000000019	合成书目：数据库系统实践	数据库	合成教学出版社
+isbn	title	copy_id	barcode	shelf_code	availability
+9780000000019	合成书目：数据库系统实践	1	9780000000019-001	SYN-A01	ON_LOAN
+9780000000019	合成书目：数据库系统实践	2	9780000000019-002	SYN-A01	AVAILABLE
+9780000000019	合成书目：数据库系统实践	3	9780000000019-003	SYN-A01	AVAILABLE
+loan_id	title	barcode	borrowed_at	due_at	returned_at
+2	合成书目：数据库系统实践	9780000000019-001	2026-11-01 09:00:00	2026-11-15 09:00:00	NULL
+1	合成书目：数据库系统实践	9780000000019-001	2026-10-01 09:00:00	2026-10-15 09:00:00	2026-10-10 10:00:00
+loan_id	reader_no	name	title	due_at	overdue_days
+2	R-DEMO-001	演示读者一	合成书目：数据库系统实践	2026-11-15 09:00:00	11
+book_id	title	total_copies	available_copies
+1	合成书目：数据库系统实践	3	2
+2	合成书目：SQL 查询练习	2	1
+3	合成书目：数据结构	2	2
+4	合成书目：软件设计	3	3
+5	合成书目：查询优化	2	2
+6	合成书目：信息管理	1	1
+book_id	title	times_borrowed
+1	合成书目：数据库系统实践	2
+2	合成书目：SQL 查询练习	1

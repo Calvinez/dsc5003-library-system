@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+data/generated.sql
+data/generated.manifest.json
+data/generated.sql.manifest.json

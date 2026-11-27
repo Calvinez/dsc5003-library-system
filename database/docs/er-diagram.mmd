@@ -1,0 +1,61 @@
+%% Physical schema; SQL is authoritative. '?' appears in comments for nullable columns.
+erDiagram
+    categories ||--o{ books : classifies
+    publishers ||--o{ books : publishes
+    books ||--o{ book_authors : has_author_link
+    authors ||--o{ book_authors : has_book_link
+    books ||--o{ book_copies : has_copy
+    readers ||--o{ loans : borrows
+    book_copies ||--o{ loans : has_history
+    categories {
+        BIGINT_UNSIGNED category_id PK "AUTO_INCREMENT"
+        VARCHAR(80) name UK
+    }
+    publishers {
+        BIGINT_UNSIGNED publisher_id PK "AUTO_INCREMENT"
+        VARCHAR(160) name UK
+    }
+    authors {
+        BIGINT_UNSIGNED author_id PK "AUTO_INCREMENT"
+        VARCHAR(64) author_key UK
+        VARCHAR(120) name
+    }
+    books {
+        BIGINT_UNSIGNED book_id PK "AUTO_INCREMENT"
+        CHAR(13) isbn UK
+        VARCHAR(255) title
+        BIGINT_UNSIGNED category_id FK
+        BIGINT_UNSIGNED publisher_id FK
+        SMALLINT_UNSIGNED publication_year
+        TEXT description "nullable"
+        DATETIME created_at "DEFAULT CURRENT_TIMESTAMP"
+    }
+    book_authors {
+        BIGINT_UNSIGNED book_id PK,FK
+        BIGINT_UNSIGNED author_id PK,FK
+    }
+    readers {
+        BIGINT_UNSIGNED reader_id PK "AUTO_INCREMENT"
+        VARCHAR(32) reader_no UK
+        VARCHAR(100) name
+        VARCHAR(254) email UK "nullable"
+        ENUM status
+        DATETIME created_at "DEFAULT CURRENT_TIMESTAMP"
+    }
+    book_copies {
+        BIGINT_UNSIGNED copy_id PK "AUTO_INCREMENT"
+        BIGINT_UNSIGNED book_id FK
+        VARCHAR(40) barcode UK
+        VARCHAR(40) shelf_code
+        ENUM status
+        DATE acquired_at
+    }
+    loans {
+        BIGINT_UNSIGNED loan_id PK "AUTO_INCREMENT"
+        BIGINT_UNSIGNED reader_id FK
+        BIGINT_UNSIGNED copy_id FK
+        DATETIME borrowed_at
+        DATETIME due_at
+        DATETIME returned_at "nullable"
+        BIGINT_UNSIGNED active_copy_id UK "nullable; stored generated"
+    }

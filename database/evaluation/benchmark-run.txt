@@ -1,0 +1,10 @@
+Started: 2026-11-26T17:07:38.449262+08:00
+Ended: 2026-11-26T17:07:41.882285+08:00
+Database: library_bench_v2
+Command: python scripts/benchmark.py --output evaluation/index-100k --repeats 21 --warmups 3 --seed 2026
+Exit code: 0
+
+STDOUT
+已完成实际只读实验：C:\Users\86187\Documents\Codex\2026-11-26\unlimited-attempts-allowed-available-sep-11\outputs\library-database-a\evaluation\index-100k
+
+STDERR

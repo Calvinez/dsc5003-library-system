@@ -1,0 +1,52 @@
+Started: 2026-11-26T17:06:29.394033+08:00
+Ended: 2026-11-26T17:06:41.138084+08:00
+Target: isolated library_bench_v2, newly created for final corrected fixture
+Generation command: python scripts/generate_data.py --books 2000 --readers 1000 --loans 100000 --seed 2026 --as-of 2026-11-26 --output data/generated.sql
+
+GENERATION STDOUT
+{
+  "synthetic": true,
+  "description": "Synthetic records, including deliberately shared author names; not real people or publications.",
+  "generator": "scripts/generate_data.py",
+  "parameters": {
+    "books": 2000,
+    "readers": 1000,
+    "loans": 100000,
+    "seed": 2026,
+    "as_of": "2026-11-26"
+  },
+  "table_rows": {
+    "categories": 8,
+    "publishers": 12,
+    "authors": 500,
+    "books": 2000,
+    "book_authors": 2401,
+    "book_copies": 6000,
+    "readers": 1000,
+    "loans": 100000
+  },
+  "scenarios": {
+    "open_loans": 5545,
+    "overdue_at_as_of_noon": 2773,
+    "not_yet_due_at_as_of_noon": 2772,
+    "returned_loans": 94455,
+    "available_copies": 1
+  },
+  "precondition": "All eight application tables must be empty; use a separate experiment database.",
+  "sql_file": "generated.sql",
+  "sha256": "7424c40a695ea84221e19e091e2a77ad904ae885999eb87ff91f0bcc17417a02"
+}
+
+GENERATION STDERR
+
+
+SCHEMA IMPORT EXIT CODE
+0
+SCHEMA STDERR
+
+
+DATA IMPORT EXIT CODE
+0
+IMPORT STDOUT
+
+IMPORT STDERR

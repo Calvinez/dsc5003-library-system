@@ -1,0 +1,16 @@
+test_bom_chinese_and_author_set_duplicate (test_data_scripts.DataScriptsTests.test_bom_chinese_and_author_set_duplicate) ... ok
+test_conflicting_isbn_is_rejected_before_writes (test_data_scripts.DataScriptsTests.test_conflicting_isbn_is_rejected_before_writes) ... ok
+test_generated_relations_dates_and_scenarios (test_data_scripts.DataScriptsTests.test_generated_relations_dates_and_scenarios) ... ok
+test_generation_is_byte_deterministic_and_manifest_matches (test_data_scripts.DataScriptsTests.test_generation_is_byte_deterministic_and_manifest_matches) ... ok
+test_injection_text_is_bound_in_importer (test_data_scripts.DataScriptsTests.test_injection_text_is_bound_in_importer) ... ok
+test_input_bounds_and_unsupported_status_column (test_data_scripts.DataScriptsTests.test_input_bounds_and_unsupported_status_column) ... ok
+test_known_isbn_checksums_and_ascii_only (test_data_scripts.DataScriptsTests.test_known_isbn_checksums_and_ascii_only) ... ok
+test_late_database_conflict_rolls_back_whole_batch (test_data_scripts.DataScriptsTests.test_late_database_conflict_rolls_back_whole_batch) ... ok
+test_repository_sample_is_valid_and_explicitly_synthetic (test_data_scripts.DataScriptsTests.test_repository_sample_is_valid_and_explicitly_synthetic) ... ok
+test_sql_encoding_preserves_injection_text_without_literal_sql (test_data_scripts.DataScriptsTests.test_sql_encoding_preserves_injection_text_without_literal_sql) ... ok
+test_stable_author_key_cannot_be_renamed (test_data_scripts.DataScriptsTests.test_stable_author_key_cannot_be_renamed) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.075s
+
+OK

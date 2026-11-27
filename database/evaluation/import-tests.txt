@@ -1,0 +1,14 @@
+test_01_first_sample_import (__main__.ImportDatabaseTests.test_01_first_sample_import) ... ok
+test_02_repeated_sample_import_is_idempotent (__main__.ImportDatabaseTests.test_02_repeated_sample_import_is_idempotent) ... ok
+test_03_identical_rows_in_one_file_are_idempotent (__main__.ImportDatabaseTests.test_03_identical_rows_in_one_file_are_idempotent) ... ok
+test_04_late_metadata_conflict_rolls_back_all_tables (__main__.ImportDatabaseTests.test_04_late_metadata_conflict_rolls_back_all_tables) ... ok
+test_05_author_key_rename_rolls_back_all_tables (__main__.ImportDatabaseTests.test_05_author_key_rename_rolls_back_all_tables) ... ok
+test_06_sql_injection_text_is_stored_as_data (__main__.ImportDatabaseTests.test_06_sql_injection_text_is_stored_as_data) ... ok
+test_07_invalid_isbn_anywhere_writes_nothing (__main__.ImportDatabaseTests.test_07_invalid_isbn_anywhere_writes_nothing) ... ok
+test_08_utf8_bom_and_four_byte_unicode (__main__.ImportDatabaseTests.test_08_utf8_bom_and_four_byte_unicode) ... ok
+test_09_conflicting_rows_in_one_file_write_nothing (__main__.ImportDatabaseTests.test_09_conflicting_rows_in_one_file_write_nothing) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.366s
+
+OK

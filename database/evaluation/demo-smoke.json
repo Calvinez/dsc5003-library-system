@@ -1,0 +1,25 @@
+{
+  "first_import": {
+    "books_inserted": 6,
+    "copies_inserted": 13,
+    "books_skipped": 0
+  },
+  "second_import": {
+    "books_inserted": 0,
+    "copies_inserted": 0,
+    "books_skipped": 6
+  },
+  "readers": 3,
+  "loans": 3,
+  "overdue": 1,
+  "queries_executed": 6,
+  "restricted_app": {
+    "delete_denied": true,
+    "create_denied": true
+  },
+  "completed_at": "2026-11-26T17:11:09.042078+08:00",
+  "database": "library_demo_v2",
+  "mysql": "8.0.12",
+  "all_passed": true,
+  "q1_prefix_match_count": 1
+}

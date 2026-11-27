@@ -1,0 +1,13 @@
+{
+  "suite": "real MySQL catalog import integration tests",
+  "database": "library_importcheck",
+  "server_version": "8.0.12",
+  "completed_at_utc": "2026-11-26T09:15:41.229281+00:00",
+  "tests_run": 9,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "success": true,
+  "tables_dropped": false,
+  "notes": "Uses only library_importcheck; precise synthetic fixture rows are cleaned, six sample books remain."
+}

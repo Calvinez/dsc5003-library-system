@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图书借阅系统</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-text="skip">跳到内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#catalog">
+        <span class="brand-mark" aria-hidden="true"><span class="book-icon"></span></span>
+        <span data-text="brand">图书借阅系统</span>
+      </a>
+      <nav class="site-nav" data-label="navigation" aria-label="主导航">
+        <a href="#catalog" data-page="catalog" data-text="catalog" aria-current="page">图书目录</a>
+        <a href="#loans" data-page="loans" data-text="loans">我的借阅</a>
+      </nav>
+      <div class="header-actions">
+        <button class="button button-quiet" id="language" type="button" lang="en">English</button>
+        <button class="button button-outline" id="reader-action" type="button">读者登录</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="catalog" class="view" aria-labelledby="catalog-title">
+      <div class="banner">
+        <h1 id="catalog-title" tabindex="-1" data-text="catalog">图书目录</h1>
+        <p data-text="catalogIntro">按书名前缀搜索，查看馆藏与可借状态。</p>
+        <form class="search" id="search" role="search" data-label="searchLabel" aria-label="按书名前缀搜索">
+          <label class="sr-only" for="search-input" data-text="searchLabel">按书名前缀搜索</label>
+          <div class="search-field">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="search-input" type="search" name="q" maxlength="255" placeholder="输入书名开头…" data-placeholder="searchPlaceholder">
+          </div>
+          <button class="button button-accent" type="submit" data-text="search">搜索</button>
+        </form>
+      </div>
+      <div class="results-heading">
+        <h2 data-text="results">图书列表</h2>
+        <p id="result-count" role="status"></p>
+      </div>
+      <div id="catalog-results"></div>
+    </section>
+
+    <section id="loans" class="view" aria-labelledby="loans-title" hidden>
+      <div class="banner">
+        <h1 id="loans-title" tabindex="-1" data-text="loans">我的借阅</h1>
+        <p data-text="loansIntro">查看最近 100 条个人记录和借还时间。</p>
+      </div>
+      <div class="results-heading">
+        <h2 data-text="loanRecords">借阅记录</h2>
+        <p id="loan-count" role="status"></p>
+      </div>
+      <div id="loan-results"></div>
+    </section>
+  </main>
+
+  <div id="notice" class="notice" hidden>
+    <div class="notice-copy" id="notice-copy" role="status"></div>
+    <button id="notice-dismiss" class="button button-quiet" type="button" data-text="dismiss">关闭</button>
+  </div>
+
+  <dialog id="reader-dialog" aria-labelledby="dialog-title">
+    <form id="reader-form">
+      <h2 id="dialog-title" data-text="signIn">读者登录</h2>
+      <p class="muted" data-text="signInIntro">输入演示读者令牌，即可借还图书并查看个人借阅。</p>
+      <label for="token" data-text="tokenLabel">读者令牌</label>
+      <input id="token" type="password" required autocomplete="off" autocapitalize="off" spellcheck="false">
+      <p class="field-error" id="sign-in-error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button class="button button-quiet" id="cancel-sign-in" type="button" data-text="cancel">取消</button>
+        <button class="button button-primary" id="submit-sign-in" type="submit">登录</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1270" viewBox="0 0 1800 1270">
+<title>Library borrowing system - physical ER model</title>
+<desc>Eight tables with all columns and seven foreign-key relationships. Each child has exactly one parent; each parent has zero or many children. The SQL schema is authoritative.</desc>
+<rect x="0" y="0" width="1800" height="1270" rx="0" fill="#FFFFFF" stroke="none"/>
+<rect x="50" y="38" width="8" height="73" rx="0" fill="#087E83" stroke="none"/>
+<text x="77" y="70" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" fill="#122942" text-anchor="start">Library borrowing system</text>
+<text x="79" y="103" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#566D7D" text-anchor="start">Physical ER model  |  MySQL 8.0 / 8.4  |  Track 1 - Part A</text>
+<text x="1750" y="65" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#087E83" text-anchor="end">8 TABLES  /  7 FOREIGN KEYS</text>
+<text x="1750" y="98" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#566D7D" text-anchor="end">sql/01_schema.sql is authoritative</text>
+<polyline points="390,251.0 435,251.0 435,353.0 480,353.0" fill="none" stroke="#087E83" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="390" cy="251.0" r="3.5" fill="#087E83"/>
+<circle cx="480" cy="353.0" r="3.5" fill="#087E83"/>
+<text x="402" y="239" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">1</text>
+<text x="470" y="341" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="end">0..*</text>
+<polyline points="390,471.0 420,471.0 420,387.0 480,387.0" fill="none" stroke="#087E83" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="390" cy="471.0" r="3.5" fill="#087E83"/>
+<circle cx="480" cy="387.0" r="3.5" fill="#087E83"/>
+<text x="400" y="459" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">1</text>
+<text x="470" y="375" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="end">0..*</text>
+<polyline points="390,791.0 435,791.0 435,825.0 480,825.0" fill="none" stroke="#087E83" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="390" cy="791.0" r="3.5" fill="#087E83"/>
+<circle cx="480" cy="825.0" r="3.5" fill="#087E83"/>
+<text x="402" y="779" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">1</text>
+<text x="470" y="813" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="end">0..*</text>
+<polyline points="670,534 670,730" fill="none" stroke="#087E83" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="670" cy="534" r="3.5" fill="#087E83"/>
+<circle cx="670" cy="730" r="3.5" fill="#087E83"/>
+<text x="685" y="558" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">1</text>
+<text x="685" y="715" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">0..*</text>
+<polyline points="860,251.0 910,251.0 910,725.0 950,725.0" fill="none" stroke="#087E83" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="860" cy="251.0" r="3.5" fill="#087E83"/>
+<circle cx="950" cy="725.0" r="3.5" fill="#087E83"/>
+<text x="875" y="239" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">1</text>
+<text x="940" y="703" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="end">0..*</text>
+<polyline points="1320,251.0 1370,251.0 1370,725.0 1410,725.0" fill="none" stroke="#087E83" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="1320" cy="251.0" r="3.5" fill="#087E83"/>
+<circle cx="1410" cy="725.0" r="3.5" fill="#087E83"/>
+<text x="1334" y="239" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">1</text>
+<text x="1400" y="703" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="end">0..*</text>
+<polyline points="1320,691.0 1350,691.0 1350,759.0 1410,759.0" fill="none" stroke="#087E83" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="1320" cy="691.0" r="3.5" fill="#087E83"/>
+<circle cx="1410" cy="759.0" r="3.5" fill="#087E83"/>
+<text x="1330" y="678" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="start">1</text>
+<text x="1400" y="775" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#087E83" text-anchor="end">0..*</text>
+<text x="684" y="620" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#566D7D" text-anchor="start">book_id</text>
+<text x="684" y="640" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#566D7D" text-anchor="start">references</text>
+<text x="684" y="660" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#566D7D" text-anchor="start">books.book_id</text>
+<rect x="50" y="190" width="340" height="140" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="50" y="190" width="340" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="50" y="226" width="340" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="65" y="219" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">categories</text>
+<rect x="51" y="234" width="338" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="59" y="256" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/AI</text>
+<text x="101" y="256" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">category_id</text>
+<text x="379" y="256" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="59" y="290" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ</text>
+<text x="101" y="290" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">name</text>
+<text x="379" y="290" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(80)</text>
+<rect x="50" y="410" width="340" height="140" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="50" y="410" width="340" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="50" y="446" width="340" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="65" y="439" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">publishers</text>
+<rect x="51" y="454" width="338" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="59" y="476" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/AI</text>
+<text x="101" y="476" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">publisher_id</text>
+<text x="379" y="476" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="59" y="510" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ</text>
+<text x="101" y="510" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">name</text>
+<text x="379" y="510" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(160)</text>
+<rect x="50" y="730" width="340" height="174" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="50" y="730" width="340" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="50" y="766" width="340" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="65" y="759" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">authors</text>
+<rect x="51" y="774" width="338" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="59" y="796" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/AI</text>
+<text x="101" y="796" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">author_id</text>
+<text x="379" y="796" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="59" y="830" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ</text>
+<text x="101" y="830" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">author_key</text>
+<text x="379" y="830" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(64)</text>
+<rect x="51" y="842" width="338" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="59" y="864" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="101" y="864" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">name</text>
+<text x="379" y="864" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(120)</text>
+<text x="61" y="894" font-family="Arial, Helvetica, sans-serif" font-size="10.3" font-weight="400" fill="#566D7D" text-anchor="start">author_key: ASCII / case sensitive</text>
+<rect x="480" y="190" width="380" height="344" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="480" y="190" width="380" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="480" y="226" width="380" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="495" y="219" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">books</text>
+<rect x="481" y="234" width="378" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="489" y="256" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/AI</text>
+<text x="531" y="256" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">book_id</text>
+<text x="849" y="256" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="489" y="290" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ</text>
+<text x="531" y="290" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">isbn</text>
+<text x="849" y="290" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">CHAR(13)</text>
+<rect x="481" y="302" width="378" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="489" y="324" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="531" y="324" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">title</text>
+<text x="849" y="324" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(255)</text>
+<text x="489" y="358" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">FK</text>
+<text x="531" y="358" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">category_id</text>
+<text x="849" y="358" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<rect x="481" y="370" width="378" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="489" y="392" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">FK</text>
+<text x="531" y="392" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">publisher_id</text>
+<text x="849" y="392" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="489" y="426" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="531" y="426" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">publication_year</text>
+<text x="849" y="426" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">SMALLINT UNSIGNED</text>
+<rect x="481" y="438" width="378" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="489" y="460" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="531" y="460" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">description ?</text>
+<text x="849" y="460" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">TEXT</text>
+<text x="489" y="494" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="531" y="494" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">created_at</text>
+<text x="849" y="494" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">DATETIME</text>
+<text x="491" y="524" font-family="Arial, Helvetica, sans-serif" font-size="10.3" font-weight="400" fill="#566D7D" text-anchor="start">isbn: ASCII / case sensitive</text>
+<rect x="480" y="730" width="380" height="140" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="480" y="730" width="380" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="480" y="766" width="380" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="495" y="759" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">book_authors</text>
+<rect x="481" y="774" width="378" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="489" y="796" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/FK</text>
+<text x="531" y="796" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">book_id</text>
+<text x="849" y="796" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="489" y="830" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/FK</text>
+<text x="531" y="830" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">author_id</text>
+<text x="849" y="830" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="491" y="860" font-family="Arial, Helvetica, sans-serif" font-size="10.3" font-weight="400" fill="#566D7D" text-anchor="start">Composite PK: (book_id, author_id)</text>
+<rect x="950" y="190" width="370" height="276" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="950" y="190" width="370" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="950" y="226" width="370" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="965" y="219" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">readers</text>
+<rect x="951" y="234" width="368" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="959" y="256" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/AI</text>
+<text x="1001" y="256" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">reader_id</text>
+<text x="1309" y="256" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="959" y="290" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ</text>
+<text x="1001" y="290" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">reader_no</text>
+<text x="1309" y="290" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(32)</text>
+<rect x="951" y="302" width="368" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="959" y="324" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1001" y="324" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">name</text>
+<text x="1309" y="324" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(100)</text>
+<text x="959" y="358" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ</text>
+<text x="1001" y="358" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">email ?</text>
+<text x="1309" y="358" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(254)</text>
+<rect x="951" y="370" width="368" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="959" y="392" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1001" y="392" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">status</text>
+<text x="1309" y="392" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">ENUM</text>
+<text x="959" y="426" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1001" y="426" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">created_at</text>
+<text x="1309" y="426" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">DATETIME</text>
+<text x="961" y="456" font-family="Arial, Helvetica, sans-serif" font-size="10.3" font-weight="400" fill="#566D7D" text-anchor="start">status: ACTIVE | SUSPENDED</text>
+<rect x="950" y="630" width="370" height="276" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="950" y="630" width="370" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="950" y="666" width="370" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="965" y="659" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">book_copies</text>
+<rect x="951" y="674" width="368" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="959" y="696" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/AI</text>
+<text x="1001" y="696" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">copy_id</text>
+<text x="1309" y="696" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="959" y="730" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">FK</text>
+<text x="1001" y="730" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">book_id</text>
+<text x="1309" y="730" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<rect x="951" y="742" width="368" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="959" y="764" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ</text>
+<text x="1001" y="764" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">barcode</text>
+<text x="1309" y="764" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(40)</text>
+<text x="959" y="798" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1001" y="798" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">shelf_code</text>
+<text x="1309" y="798" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">VARCHAR(40)</text>
+<rect x="951" y="810" width="368" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="959" y="832" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1001" y="832" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">status</text>
+<text x="1309" y="832" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">ENUM</text>
+<text x="959" y="866" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1001" y="866" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">acquired_at</text>
+<text x="1309" y="866" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">DATE</text>
+<text x="961" y="896" font-family="Arial, Helvetica, sans-serif" font-size="10.3" font-weight="400" fill="#566D7D" text-anchor="start">status: IN_SERVICE | MAINTENANCE | WITHDRAWN</text>
+<rect x="1410" y="630" width="350" height="310" rx="8" fill="#FFFFFF" stroke="#CDDBE4"/>
+<rect x="1410" y="630" width="350" height="44" rx="8" fill="#122942" stroke="none"/>
+<rect x="1410" y="666" width="350" height="8" rx="0" fill="#122942" stroke="none"/>
+<text x="1425" y="659" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start">loans</text>
+<rect x="1411" y="674" width="348" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="1419" y="696" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">PK/AI</text>
+<text x="1461" y="696" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">loan_id</text>
+<text x="1749" y="696" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="1419" y="730" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">FK</text>
+<text x="1461" y="730" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">reader_id</text>
+<text x="1749" y="730" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<rect x="1411" y="742" width="348" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="1419" y="764" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">FK</text>
+<text x="1461" y="764" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">copy_id</text>
+<text x="1749" y="764" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="1419" y="798" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1461" y="798" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">borrowed_at</text>
+<text x="1749" y="798" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">DATETIME</text>
+<rect x="1411" y="810" width="348" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="1419" y="832" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1461" y="832" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">due_at</text>
+<text x="1749" y="832" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">DATETIME</text>
+<text x="1419" y="866" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start"></text>
+<text x="1461" y="866" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">returned_at ?</text>
+<text x="1749" y="866" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">DATETIME</text>
+<rect x="1411" y="878" width="348" height="34" rx="0" fill="#F6F9FC" stroke="none"/>
+<text x="1419" y="900" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#087E83" text-anchor="start">UQ/G</text>
+<text x="1461" y="900" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#253C50" text-anchor="start">active_copy_id ?</text>
+<text x="1749" y="900" font-family="Arial, Helvetica, sans-serif" font-size="11.4" font-weight="400" fill="#566D7D" text-anchor="end">BIGINT UNSIGNED</text>
+<text x="1421" y="930" font-family="Arial, Helvetica, sans-serif" font-size="10.3" font-weight="400" fill="#566D7D" text-anchor="start">G: stored generated; see open-loan rule below</text>
+<rect x="50" y="1010" width="1710" height="205" rx="10" fill="#F0F6FA" stroke="none"/>
+<text x="71" y="1044" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#122942" text-anchor="start">Reading the diagram</text>
+<text x="71" y="1076" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#253C50" text-anchor="start">PK  primary key     FK  foreign key     UQ  unique key     G  stored generated     AI  auto_increment     ?  nullable</text>
+<text x="71" y="1107" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#253C50" text-anchor="start">Cardinality: 1 = exactly one parent; 0..* = zero or many child rows. Unmarked columns are NOT NULL.</text>
+<text x="71" y="1138" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#253C50" text-anchor="start">Open-loan rule: active_copy_id = copy_id when returned_at IS NULL; otherwise NULL. UNIQUE(active_copy_id).</text>
+<text x="71" y="1169" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#253C50" text-anchor="start">FK actions: RESTRICT; book_authors.book_id uses ON DELETE CASCADE. This does not delete borrowing history.</text>
+<text x="71" y="1198" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#566D7D" text-anchor="start">Dates: due_at &gt; borrowed_at; returned_at IS NULL or returned_at &gt;= borrowed_at. Availability is derived, not duplicated.</text>
+<text x="50" y="1244" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#566D7D" text-anchor="start">Database course project  |  Part A handoff to B / C / D</text>
+<text x="1760" y="1244" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#566D7D" text-anchor="end">A3 landscape  |  vector source included</text>
+</svg>

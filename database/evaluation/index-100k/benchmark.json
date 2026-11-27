@@ -1,0 +1,752 @@
+{
+  "environment": {
+    "server_version": "8.0.12",
+    "database_name": "library_bench_v2",
+    "server_edition": "MySQL Community Server - GPL",
+    "innodb_buffer_pool_size": 134217728,
+    "transaction_isolation": "REPEATABLE-READ",
+    "sql_mode": "STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION",
+    "connection_charset": "utf8mb4",
+    "python": "3.12.14",
+    "pymysql": "1.1.2",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 16,
+    "started_at_utc": "2026-11-26T09:07:38.717069+00:00",
+    "repeats": 21,
+    "warmups": 3,
+    "seed": 2026,
+    "timer": "perf_counter_ns; includes client/server round trip and fetchall",
+    "snapshot": "one REPEATABLE READ read-only consistent snapshot",
+    "p95_method": "nearest-rank ceil(0.95 * n)",
+    "table_counts": {
+      "books": 2000,
+      "book_copies": 6000,
+      "readers": 1000,
+      "loans": 100000
+    },
+    "reader_loan_distribution": {
+      "minimum": 67,
+      "maximum": 131,
+      "mean": 100,
+      "readers_without_loans": 0
+    }
+  },
+  "query_template": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans {hint}\nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+  "cases": [
+    {
+      "reader_id": 829,
+      "loan_count": 125,
+      "label": "记录较多的读者",
+      "reader_exists": true,
+      "case": "reader_1",
+      "variants": {
+        "optimizer": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans \nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            829
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "43.75"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ref",
+                  "possible_keys": [
+                    "idx_loans_reader_open_due"
+                  ],
+                  "key": "idx_loans_reader_open_due",
+                  "used_key_parts": [
+                    "reader_id"
+                  ],
+                  "key_length": "8",
+                  "ref": [
+                    "const"
+                  ],
+                  "rows_examined_per_scan": 125,
+                  "rows_produced_per_join": 125,
+                  "filtered": "100.00",
+                  "index_condition": "(`library_bench_v2`.`loans`.`reader_id` <=> 829)",
+                  "cost_info": {
+                    "read_cost": "31.25",
+                    "eval_cost": "12.50",
+                    "prefix_cost": "43.75",
+                    "data_read_per_join": "6K"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ]
+                }
+              }
+            }
+          },
+          "result_rows": 100,
+          "result_sha256": "e63d5e424977ff4389af17286a8a44e55b36e000bd7f0d1f133ae9dc17b793f7",
+          "samples_ms": [
+            4.566,
+            3.2925,
+            3.2606,
+            4.39,
+            3.88,
+            3.4051,
+            3.6001,
+            3.3919,
+            3.5701,
+            3.9602,
+            4.6325,
+            4.0031,
+            3.5772,
+            3.6911,
+            4.6741,
+            3.8456,
+            3.5677,
+            3.5907,
+            3.2391,
+            3.4025,
+            3.3287
+          ],
+          "median_ms": 3.5907,
+          "p95_ms": 4.6325,
+          "minimum_ms": 3.2391,
+          "maximum_ms": 4.6741
+        },
+        "ignore_reader_index": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans IGNORE INDEX (idx_loans_reader_open_due)\nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            829
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "10102.35"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ALL",
+                  "rows_examined_per_scan": 99981,
+                  "rows_produced_per_join": 105,
+                  "filtered": "0.11",
+                  "cost_info": {
+                    "read_cost": "10091.83",
+                    "eval_cost": "10.52",
+                    "prefix_cost": "10102.35",
+                    "data_read_per_join": "5K"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ],
+                  "attached_condition": "(`library_bench_v2`.`loans`.`reader_id` = 829)"
+                }
+              }
+            }
+          },
+          "result_rows": 100,
+          "result_sha256": "e63d5e424977ff4389af17286a8a44e55b36e000bd7f0d1f133ae9dc17b793f7",
+          "samples_ms": [
+            34.6657,
+            34.8347,
+            33.8174,
+            33.5175,
+            33.4736,
+            33.4744,
+            34.5696,
+            35.5133,
+            34.3033,
+            34.125,
+            34.4956,
+            36.1787,
+            33.2507,
+            33.3832,
+            33.3214,
+            32.9432,
+            32.9624,
+            33.1689,
+            33.1848,
+            32.5579,
+            36.4837
+          ],
+          "median_ms": 33.5175,
+          "p95_ms": 36.1787,
+          "minimum_ms": 32.5579,
+          "maximum_ms": 36.4837
+        },
+        "force_reader_index": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans FORCE INDEX (idx_loans_reader_open_due)\nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            829
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "43.75"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ref",
+                  "possible_keys": [
+                    "idx_loans_reader_open_due"
+                  ],
+                  "key": "idx_loans_reader_open_due",
+                  "used_key_parts": [
+                    "reader_id"
+                  ],
+                  "key_length": "8",
+                  "ref": [
+                    "const"
+                  ],
+                  "rows_examined_per_scan": 125,
+                  "rows_produced_per_join": 125,
+                  "filtered": "100.00",
+                  "index_condition": "(`library_bench_v2`.`loans`.`reader_id` <=> 829)",
+                  "cost_info": {
+                    "read_cost": "31.25",
+                    "eval_cost": "12.50",
+                    "prefix_cost": "43.75",
+                    "data_read_per_join": "6K"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ]
+                }
+              }
+            }
+          },
+          "result_rows": 100,
+          "result_sha256": "e63d5e424977ff4389af17286a8a44e55b36e000bd7f0d1f133ae9dc17b793f7",
+          "samples_ms": [
+            3.2852,
+            3.3081,
+            3.2615,
+            3.8068,
+            4.3864,
+            3.5085,
+            3.3693,
+            3.6777,
+            3.4718,
+            3.2779,
+            3.5552,
+            3.7465,
+            3.6544,
+            3.501,
+            3.4781,
+            3.6803,
+            3.3485,
+            3.7615,
+            3.4219,
+            4.7838,
+            3.3048
+          ],
+          "median_ms": 3.501,
+          "p95_ms": 4.3864,
+          "minimum_ms": 3.2615,
+          "maximum_ms": 4.7838
+        }
+      }
+    },
+    {
+      "reader_id": 800,
+      "loan_count": 73,
+      "label": "记录较少的读者",
+      "reader_exists": true,
+      "case": "reader_2",
+      "variants": {
+        "optimizer": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans \nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            800
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "25.55"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ref",
+                  "possible_keys": [
+                    "idx_loans_reader_open_due"
+                  ],
+                  "key": "idx_loans_reader_open_due",
+                  "used_key_parts": [
+                    "reader_id"
+                  ],
+                  "key_length": "8",
+                  "ref": [
+                    "const"
+                  ],
+                  "rows_examined_per_scan": 73,
+                  "rows_produced_per_join": 73,
+                  "filtered": "100.00",
+                  "index_condition": "(`library_bench_v2`.`loans`.`reader_id` <=> 800)",
+                  "cost_info": {
+                    "read_cost": "18.25",
+                    "eval_cost": "7.30",
+                    "prefix_cost": "25.55",
+                    "data_read_per_join": "3K"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ]
+                }
+              }
+            }
+          },
+          "result_rows": 73,
+          "result_sha256": "988dccc9a4bb4571872f740ac19e5d851ff119c06dc35d4be93809e1e3e3126a",
+          "samples_ms": [
+            2.8444,
+            2.4558,
+            2.8184,
+            2.8949,
+            3.3041,
+            2.7517,
+            3.5804,
+            2.5769,
+            2.4862,
+            2.8482,
+            3.0548,
+            2.8739,
+            2.7854,
+            3.0783,
+            2.7641,
+            2.6425,
+            2.963,
+            2.8096,
+            3.5038,
+            3.4889,
+            2.9111
+          ],
+          "median_ms": 2.8482,
+          "p95_ms": 3.5038,
+          "minimum_ms": 2.4558,
+          "maximum_ms": 3.5804
+        },
+        "ignore_reader_index": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans IGNORE INDEX (idx_loans_reader_open_due)\nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            800
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "10102.35"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ALL",
+                  "rows_examined_per_scan": 99981,
+                  "rows_produced_per_join": 105,
+                  "filtered": "0.11",
+                  "cost_info": {
+                    "read_cost": "10091.83",
+                    "eval_cost": "10.52",
+                    "prefix_cost": "10102.35",
+                    "data_read_per_join": "5K"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ],
+                  "attached_condition": "(`library_bench_v2`.`loans`.`reader_id` = 800)"
+                }
+              }
+            }
+          },
+          "result_rows": 73,
+          "result_sha256": "988dccc9a4bb4571872f740ac19e5d851ff119c06dc35d4be93809e1e3e3126a",
+          "samples_ms": [
+            33.3829,
+            34.7419,
+            34.0213,
+            33.9987,
+            35.6385,
+            34.7194,
+            32.4999,
+            31.9469,
+            34.2093,
+            32.5686,
+            32.5027,
+            34.0235,
+            33.3574,
+            32.8019,
+            34.4312,
+            33.9598,
+            33.8394,
+            33.1972,
+            33.2699,
+            32.5758,
+            33.2291
+          ],
+          "median_ms": 33.3829,
+          "p95_ms": 34.7419,
+          "minimum_ms": 31.9469,
+          "maximum_ms": 35.6385
+        },
+        "force_reader_index": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans FORCE INDEX (idx_loans_reader_open_due)\nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            800
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "25.55"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ref",
+                  "possible_keys": [
+                    "idx_loans_reader_open_due"
+                  ],
+                  "key": "idx_loans_reader_open_due",
+                  "used_key_parts": [
+                    "reader_id"
+                  ],
+                  "key_length": "8",
+                  "ref": [
+                    "const"
+                  ],
+                  "rows_examined_per_scan": 73,
+                  "rows_produced_per_join": 73,
+                  "filtered": "100.00",
+                  "index_condition": "(`library_bench_v2`.`loans`.`reader_id` <=> 800)",
+                  "cost_info": {
+                    "read_cost": "18.25",
+                    "eval_cost": "7.30",
+                    "prefix_cost": "25.55",
+                    "data_read_per_join": "3K"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ]
+                }
+              }
+            }
+          },
+          "result_rows": 73,
+          "result_sha256": "988dccc9a4bb4571872f740ac19e5d851ff119c06dc35d4be93809e1e3e3126a",
+          "samples_ms": [
+            2.8869,
+            2.8371,
+            2.6304,
+            2.6639,
+            2.8513,
+            2.6819,
+            3.3476,
+            2.86,
+            2.6569,
+            2.7267,
+            2.5092,
+            2.9921,
+            2.7902,
+            2.9127,
+            2.8896,
+            2.7698,
+            2.9548,
+            2.4743,
+            2.6371,
+            3.1395,
+            2.872
+          ],
+          "median_ms": 2.8371,
+          "p95_ms": 3.1395,
+          "minimum_ms": 2.4743,
+          "maximum_ms": 3.3476
+        }
+      }
+    },
+    {
+      "reader_id": 1001,
+      "loan_count": 0,
+      "label": "无匹配记录（不存在的 reader_id）",
+      "reader_exists": false,
+      "case": "reader_3",
+      "variants": {
+        "optimizer": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans \nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            1001
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "0.35"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ref",
+                  "possible_keys": [
+                    "idx_loans_reader_open_due"
+                  ],
+                  "key": "idx_loans_reader_open_due",
+                  "used_key_parts": [
+                    "reader_id"
+                  ],
+                  "key_length": "8",
+                  "ref": [
+                    "const"
+                  ],
+                  "rows_examined_per_scan": 1,
+                  "rows_produced_per_join": 1,
+                  "filtered": "100.00",
+                  "index_condition": "(`library_bench_v2`.`loans`.`reader_id` <=> 1001)",
+                  "cost_info": {
+                    "read_cost": "0.25",
+                    "eval_cost": "0.10",
+                    "prefix_cost": "0.35",
+                    "data_read_per_join": "56"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ]
+                }
+              }
+            }
+          },
+          "result_rows": 0,
+          "result_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "samples_ms": [
+            0.9498,
+            0.4186,
+            1.2308,
+            0.5687,
+            0.4141,
+            0.7492,
+            0.4142,
+            0.4164,
+            0.4148,
+            0.563,
+            0.7873,
+            1.2462,
+            0.6665,
+            1.0733,
+            0.7603,
+            1.0704,
+            0.6507,
+            1.2107,
+            0.5894,
+            0.6031,
+            0.4431
+          ],
+          "median_ms": 0.6507,
+          "p95_ms": 1.2308,
+          "minimum_ms": 0.4141,
+          "maximum_ms": 1.2462
+        },
+        "ignore_reader_index": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans IGNORE INDEX (idx_loans_reader_open_due)\nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            1001
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "10102.35"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ALL",
+                  "rows_examined_per_scan": 99981,
+                  "rows_produced_per_join": 105,
+                  "filtered": "0.11",
+                  "cost_info": {
+                    "read_cost": "10091.83",
+                    "eval_cost": "10.52",
+                    "prefix_cost": "10102.35",
+                    "data_read_per_join": "5K"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ],
+                  "attached_condition": "(`library_bench_v2`.`loans`.`reader_id` = 1001)"
+                }
+              }
+            }
+          },
+          "result_rows": 0,
+          "result_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "samples_ms": [
+            31.2526,
+            30.9563,
+            30.2194,
+            30.2055,
+            30.1006,
+            30.5093,
+            31.3566,
+            30.4926,
+            30.8813,
+            30.0546,
+            29.9181,
+            30.4632,
+            30.5822,
+            30.6651,
+            30.0585,
+            30.2495,
+            30.4325,
+            31.7304,
+            30.7385,
+            30.593,
+            30.2615
+          ],
+          "median_ms": 30.4926,
+          "p95_ms": 31.3566,
+          "minimum_ms": 29.9181,
+          "maximum_ms": 31.7304
+        },
+        "force_reader_index": {
+          "sql": "SELECT loan_id, copy_id, borrowed_at, due_at, returned_at\nFROM loans FORCE INDEX (idx_loans_reader_open_due)\nWHERE reader_id = %s\nORDER BY borrowed_at DESC, loan_id DESC\nLIMIT 100",
+          "params": [
+            1001
+          ],
+          "explain": {
+            "query_block": {
+              "select_id": 1,
+              "cost_info": {
+                "query_cost": "0.35"
+              },
+              "ordering_operation": {
+                "using_filesort": true,
+                "table": {
+                  "table_name": "loans",
+                  "access_type": "ref",
+                  "possible_keys": [
+                    "idx_loans_reader_open_due"
+                  ],
+                  "key": "idx_loans_reader_open_due",
+                  "used_key_parts": [
+                    "reader_id"
+                  ],
+                  "key_length": "8",
+                  "ref": [
+                    "const"
+                  ],
+                  "rows_examined_per_scan": 1,
+                  "rows_produced_per_join": 1,
+                  "filtered": "100.00",
+                  "index_condition": "(`library_bench_v2`.`loans`.`reader_id` <=> 1001)",
+                  "cost_info": {
+                    "read_cost": "0.25",
+                    "eval_cost": "0.10",
+                    "prefix_cost": "0.35",
+                    "data_read_per_join": "56"
+                  },
+                  "used_columns": [
+                    "loan_id",
+                    "reader_id",
+                    "copy_id",
+                    "borrowed_at",
+                    "due_at",
+                    "returned_at"
+                  ]
+                }
+              }
+            }
+          },
+          "result_rows": 0,
+          "result_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "samples_ms": [
+            0.8862,
+            0.5596,
+            0.7848,
+            1.0703,
+            0.4166,
+            0.4225,
+            1.0443,
+            0.9786,
+            0.4181,
+            0.9869,
+            0.5483,
+            0.8209,
+            0.9651,
+            1.2416,
+            0.855,
+            1.1521,
+            0.4204,
+            0.7601,
+            1.1225,
+            1.0003,
+            0.4523
+          ],
+          "median_ms": 0.855,
+          "p95_ms": 1.1521,
+          "minimum_ms": 0.4166,
+          "maximum_ms": 1.2416
+        }
+      }
+    }
+  ],
+  "all_results_equal": true,
+  "limitations": [
+    "合成数据上的局部只读实验，不等同于生产负载或总体可扩展性证明。",
+    "耗时包含客户端往返和结果传输；使用预热后的缓存，不宣称冷缓存结果。",
+    "IGNORE INDEX 只排除指定索引，优化器仍可选择其他索引。",
+    "FORCE INDEX 是受控变体，不代表优化器自主选择。",
+    "EXPLAIN 行数为估计值；未使用 EXPLAIN ANALYZE。",
+    "当高/低组记录数接近时，不应解读为强烈的数据倾斜。"
+  ]
+}

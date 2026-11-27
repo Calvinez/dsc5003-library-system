@@ -1,0 +1,7 @@
+isbn,title,authors,publisher,publication_year,category,copies,shelf_code,description
+9780000000019,合成书目：数据库系统实践,syn-a001:合成作者甲|syn-a002:合成作者乙,合成教学出版社,2024,数据库,3,SYN-A01,Synthetic sample only; not a real publication.
+9780000000026,合成书目：SQL 查询练习,syn-a001:合成作者甲,合成教学出版社,2025,数据库,2,SYN-A01,Synthetic sample for title and ISBN searches.
+9780000000033,合成书目：数据结构,syn-a003:合成同名作者,合成计算机出版社,2023,计算机基础,2,SYN-B01,Synthetic author identity example: author key distinguishes people.
+9780000000040,合成书目：软件设计,syn-a004:合成同名作者,合成计算机出版社,2024,软件工程,3,SYN-C01,Synthetic author has the same display name as a different author.
+9780000000057,合成书目：查询优化,syn-a001:合成作者甲|syn-a005:合成作者戊,合成教学出版社,2026,数据库,2,SYN-A02,Synthetic many-to-many book/author example.
+9780000000064,合成书目：信息管理,syn-a002:合成作者乙,合成信息出版社,2022,信息系统,1,SYN-D01,Synthetic sample for the course database demonstration.

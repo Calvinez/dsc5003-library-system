@@ -1,0 +1,27 @@
+{
+  "database": "library_bench_v2",
+  "checked_at": "2026-11-26T17:08:38.230293+08:00",
+  "sql_sha256": "7424c40a695ea84221e19e091e2a77ad904ae885999eb87ff91f0bcc17417a02",
+  "manifest_sha256_matches": true,
+  "actual_row_counts": {
+    "categories": 8,
+    "publishers": 12,
+    "authors": 500,
+    "books": 2000,
+    "book_authors": 2401,
+    "book_copies": 6000,
+    "readers": 1000,
+    "loans": 100000
+  },
+  "row_counts_match_manifest": true,
+  "violation_counts": {
+    "publication_after_acquisition": 0,
+    "invalid_loan_dates": 0,
+    "loans_before_acquisition": 0,
+    "loans_before_reader_registration": 0,
+    "open_loans_on_non_service_copies": 0,
+    "duplicate_active_copies": 0,
+    "overlapping_copy_loan_intervals": 0
+  },
+  "all_passed": true
+}
